@@ -2,12 +2,18 @@
     width: 150px;
     height: 40px;
     border-radius: 5px;
-    background-color: #c70101;
+    background-color: $MainColor;
     border: none;
     color: #ffffff;
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
+    &:hover {
+        background-color: #FFF;
+        border: 2px solid $MainColor;
+        color: $MainColor;
+        transition: 0.3s;
+    }
     &_main {
         margin-top: 67px;
         width: 300px;
