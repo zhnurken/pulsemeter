@@ -1,0 +1,33 @@
+// Медиазапросы для различных устройств
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Адаптивные стили для блока header
+.header {
+  @media (max-width: $tablet) {
+    padding: 10px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 5px;
+  }
+
+  &__logo {
+    @media (max-width: $tablet) {
+      font-size: 24px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 18px;
+    }
+  }
+
+  &__menu {
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+}
+
+// Продолжайте добавлять адаптивные стили для других блоков
