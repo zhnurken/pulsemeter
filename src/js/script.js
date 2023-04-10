@@ -48,4 +48,49 @@ $(document).ready(function(){
       toggleSlide(".catalog-item__link");
       toggleSlide(".catalog-item__back");
 
+      //Modals
+
+      $('[data-modal=consultation]').on('click', function(){
+        $('.overlay, #consultation').fadeIn();
+      });
+
+    //   $("[data-modal=thanks]").on("click", function () {
+    //     $(".overlay, #thanks").fadeIn();
+    //   });
+
+      $(".modal__close").on("click", function () {
+        $(".overlay, #consultation, #order, #thanks").fadeOut();
+      });
+
+      $(".button_mini").each(function(i){
+        $(this).on('click', function(){
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+            $(".overlay, #order").fadeIn();
+        })
+      });
+
+      function valideForms(form) {
+        $(form).validate({
+            rules: {
+            name: "required",
+            email: {
+                required: true,
+                email: true,
+            },
+            phone: "required",
+            },
+            messages: {
+            name: "Пожалуйста введите свое имя",
+            phone: "Пожалуйста введите свой номер",
+            email: {
+                required: "Пожалуйста введите свою почту",
+                email: "Неправильно введен адрес почты",
+            },
+            },
+        });
+      }
+
+      valideForms("#consultation-form");
+      valideForms("#consultation form");
+      valideForms("#order form");
 });

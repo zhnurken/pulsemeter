@@ -9,7 +9,7 @@
     font-weight: 500;
     text-transform: uppercase;
     &:hover {
-        background-color: #FFF;
+        background-color: rgba($color: #FFF, $alpha: 0.4);
         border: 2px solid $MainColor;
         color: $MainColor;
         transition: 0.3s;
