@@ -54,9 +54,6 @@ $(document).ready(function(){
         $('.overlay, #consultation').fadeIn();
       });
 
-    //   $("[data-modal=thanks]").on("click", function () {
-    //     $(".overlay, #thanks").fadeIn();
-    //   });
 
       $(".modal__close").on("click", function () {
         $(".overlay, #consultation, #order, #thanks").fadeOut();
@@ -95,4 +92,25 @@ $(document).ready(function(){
       valideForms("#order form");
 
       $('input[name=phone]').mask("+7 (999) 999-9999");
+
+      $('form').submit(function(e){
+        e.preventDefault();
+
+        if(!$(this).valid()) {
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $(".overlay, #thanks").fadeIn();
+
+            $("form").trigger("reset");
+        })
+        return false;
+      })
 });
