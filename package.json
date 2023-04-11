@@ -9,6 +9,7 @@
   "author": "Nurken",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "source-map-resolve": "^0.6.0"
   },
   "devDependencies": {

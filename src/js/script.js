@@ -145,4 +145,6 @@ $(document).ready(function(){
           );
         } 
       });
+
+      new WOW().init();$(".overlay").click(function(){
 });
